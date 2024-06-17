@@ -1,0 +1,47 @@
+[
+    {
+        "projectName": "Admin",
+        "projectGlossaries": [
+            {
+                "GlossaryName": "Classification",
+                "GlossaryDescription": "Used to classify the type of data updated description",
+                "GlossaryTerms": [
+                    {
+                        "Name": "HealthCare",
+                        "ShortDescription": "HealthCare GT",
+                        "LongDescription": "HealthCare Glossary Term",
+                        "TermRelations": null
+                    },
+                    {
+                        "Name": "Marketing",
+                        "ShortDescription": "Marketing GT",
+                        "LongDescription": "Marketing Glossary Term",
+                        "TermRelations": null
+                    }
+                ]
+            },
+            {
+                "GlossaryName": "ContainsPIData",
+                "GlossaryDescription": "Used to classify whether data source contains PI data updated description",
+                "GlossaryTerms": [
+                    {
+                        "Name": "Yes",
+                        "ShortDescription": "",
+                        "LongDescription": "",
+                        "TermRelations": null
+                    },
+                    {
+                        "Name": "No",
+                        "ShortDescription": "",
+                        "LongDescription": "",
+                        "TermRelations": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectName": "Marketing",
+        "projectGlossaries": []
+    }
+]

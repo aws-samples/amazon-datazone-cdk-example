@@ -1,0 +1,22 @@
+[
+    {
+        "projectName": "Admin",
+        "projectDescription": "Admin project that would manage all admin resources",
+        "projectMembers": [
+            {
+                "memberIdentifier": "arn:aws:iam::AWS_ACCOUNT_ID_PLACEHOLDER:role/Admin",
+                "memberIdentifierType": "UserIdentifier"
+            }
+        ]
+    },
+    {
+        "projectName": "Marketing",
+        "projectDescription": "Marketing project that would manage all marketing resources",
+        "projectMembers": [
+            {
+                "memberIdentifier": "arn:aws:iam::AWS_ACCOUNT_ID_PLACEHOLDER:role/Admin",
+                "memberIdentifierType": "UserIdentifier"
+            }
+        ]
+    }
+]

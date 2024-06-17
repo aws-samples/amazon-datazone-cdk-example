@@ -1,0 +1,63 @@
+[
+    {
+        "projectName": "Admin",
+        "environmentProfiles": [
+            {
+                "EnvironmentProfileName": "DataLakeEP",
+                "EnvironmentBlueprintIdentifier": "DefaultDataLake",
+                "Description": "Testing Env profile for CDK for Data Lake",
+                "AwsAccountId": "AWS_ACCOUNT_ID_PLACEHOLDER",
+                "AwsAccountRegion": "AWS_REGION_PLACEHOLDER",
+                "Environments": [
+                    {
+                        "EnvironmentName": "GlueDataSourceEnv",
+                        "Description": "Testing Env for CDK for Glue DataSources",
+                        "DataSources": [
+                            {
+                                "Configuration": {
+                                    "glueRunConfiguration": {
+                                        "relationalFilterConfigurations": [
+                                            {
+                                                "databaseName": "EXISTING_GLUE_DB_NAME_PLACEHOLDER",
+                                                "filterExpressions": [
+                                                    {
+                                                        "type": "INCLUDE",
+                                                        "expression": "*"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "Description": "DATA_SOURCE_DESCRIPTION_PLACEHOLDER",
+                                "EnableSetting": "ENABLED",
+                                "Name": "DATA_SOURCE_NAME_PLACEHOLDER",
+                                "PublishOnImport": true,
+                                "Recommendation": {
+                                    "enableBusinessNameGeneration": true
+                                },
+                                "Schedule": {
+                                    "schedule": "cron(0 7 * * ? *)"
+                                },
+                                "Type": "GLUE",
+                                "AssetFormsInput": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "EnvironmentProfileName": "DataWarehouseEP",
+                "EnvironmentBlueprintIdentifier": "DefaultDataWarehouse",
+                "Description": "Testing Env profile for CDK for Data Warehouse",
+                "AwsAccountId": "AWS_ACCOUNT_ID_PLACEHOLDER",
+                "AwsAccountRegion": "AWS_REGION_PLACEHOLDER",
+                "Environments": []
+            }
+        ]
+    },
+    {
+        "projectName": "Marketing",
+        "environmentProfiles": []
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "projectName": "Admin",
+        "forms": [
+            {
+                "formName": "TestingForm",
+                "formDescription": "Testing form for smithy 1",
+                "formSmithyModel": "@amazon.datazone#displayname(defaultName: \"TestingFormDisplayName\")\nstructure TestingForm {\n    @documentation(\"Description for TestingFormField1\")\n    @required\n    @amazon.datazone#displayname(defaultName: \"TestingFormField1DisplayName\")\n    TestingFormField1TechnicalName: Integer\n\n    @documentation(\"Description for TestingFormField2\")\n    @required\n    @amazon.datazone#displayname(defaultName: \"TestingFormField2DisplayName\")\n    TestingFormField2TechnicalName: Boolean\n}"
+            },
+            {
+                "formName": "TestingForm2",
+                "formSmithyModel": "@amazon.datazone#displayname(defaultName: \"TestingForm2DisplayName\")\nstructure TestingForm2 {\n@documentation(\"Description for TestingForm2Field1\")\n@required\n@amazon.datazone#displayname(defaultName: \"TestingForm2Field1DisplayName\")\nTestingForm2Field1TechnicalName: Integer\n\n@documentation(\"Description for TestingForm2Field2\")\n@required\n@amazon.datazone#displayname(defaultName: \"TestingForm2Field2DisplayName\")\nTestingForm2Field2TechnicalName: Boolean\n}"
+            }
+        ]
+    },
+    {
+        "projectName": "Marketing",
+        "forms": []
+    }
+]
