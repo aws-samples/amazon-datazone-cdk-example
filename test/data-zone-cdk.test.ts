@@ -36,7 +36,6 @@ test('Build all Stacks', () => {
 
   const projectMembershipsStack = new DataZoneProjectMembershipStack(app, 'DataZoneProjectMembershipStack', {
     projectMap: projectsStack.projectMap,
-    projectMembershipCustomResource: dataZonePreqStack.projectMembershipCustomResource,
     domainId: domainStack.domainId,
   });
 
