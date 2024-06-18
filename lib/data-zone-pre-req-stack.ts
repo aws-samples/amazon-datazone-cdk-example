@@ -64,7 +64,7 @@ export class DataZonePreReqStack extends cdk.Stack {
     this.glossaryTermCustomResource = this.createGlossaryTermCustomResource();
   }
 
-  // Create Datazone Domain creation Iam role - 
+  // Create Datazone Domain creation Iam role -
   // See https://docs.aws.amazon.com/datazone/latest/userguide/create-domain.html
 
   private createDomainExecutionRole() {
@@ -95,7 +95,6 @@ export class DataZonePreReqStack extends cdk.Stack {
       },
     });
 
-    
 
     const dataZoneAssumeRoleStatement = new PolicyStatement({
       effect: Effect.ALLOW,

@@ -3931,7 +3931,7 @@ MIT
     SOFTWARE
 
 
-@typescript-eslint/eslint-plugin 7.13.0
+@typescript-eslint/eslint-plugin 7.13.1
 MIT
 MIT License
 
@@ -4007,7 +4007,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@typescript-eslint/scope-manager 7.13.0
+@typescript-eslint/scope-manager 7.13.1
 MIT
 MIT License
 
@@ -4032,7 +4032,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@typescript-eslint/type-utils 7.13.0
+@typescript-eslint/type-utils 7.13.1
 MIT
 MIT License
 
@@ -4082,7 +4082,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@typescript-eslint/types 7.13.0
+@typescript-eslint/types 7.13.1
 MIT
 MIT License
 
@@ -4137,7 +4137,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-@typescript-eslint/typescript-estree 7.13.0
+@typescript-eslint/typescript-estree 7.13.1
 BSD-2-Clause
 TypeScript ESTree
 
@@ -4167,7 +4167,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-@typescript-eslint/utils 7.13.0
+@typescript-eslint/utils 7.13.1
 MIT
 MIT License
 
@@ -4217,7 +4217,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@typescript-eslint/visitor-keys 7.13.0
+@typescript-eslint/visitor-keys 7.13.1
 MIT
 MIT License
 
@@ -4284,7 +4284,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-acorn-walk 8.3.2
+acorn-walk 8.3.3
 MIT
 MIT License
 
@@ -4309,7 +4309,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-acorn 8.11.3
+acorn 8.12.0
 MIT
 MIT License
 
@@ -4385,6 +4385,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+
+amazon-datazone-cdk-example 0.1.0
+MIT-0
+MIT No Attribution
+
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ansi-escapes 4.3.2
 MIT
@@ -5869,7 +5888,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-caniuse-lite 1.0.30001632
+caniuse-lite 1.0.30001636
 CC-BY-4.0
 Attribution 4.0 International
 
@@ -7035,25 +7054,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-datazone-cdk 0.1.0
-MIT-0
-MIT No Attribution
-
-Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 debug 3.2.7
 MIT
 (The MIT License)
@@ -7708,7 +7708,7 @@ Original Code is [東アジアの文字幅 (East Asian Width) の判定 - 中途
     console.log(eaw.length('￠￦｡ￜㄅ뀀¢⟭a⊙①بف')) // 19
 
 
-electron-to-chromium 1.4.799
+electron-to-chromium 1.4.805
 ISC
 Copyright 2018 Kilian Valkhof
 
@@ -9049,7 +9049,7 @@ SOFTWARE.
 
 
 
-foreground-child 3.2.0
+foreground-child 3.2.1
 ISC
 The ISC License
 
@@ -15132,7 +15132,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-ts-jest 29.1.4
+ts-jest 29.1.5
 MIT
 MIT License
 
