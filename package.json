@@ -2,7 +2,7 @@
     "name": "amazon-datazone-cdk-example",
     "version": "0.1.0",
     "bin": {
-        "datazone-cdk": "bin/app.ts"
+        "amazon-datazone-cdk-example": "bin/app.ts"
     },
     "license": "MIT-0",
     "scripts": {
