@@ -19,9 +19,6 @@ jobs:
   CheckBuild:
     env:
       AWS_REGION: "eu-west-1"
-      ACCOUNT_RES: "012345678912" # nosem - no sec issue
-      ACCOUNT_DEV: "012345678912" # nosem - no sec issue
-      ACCOUNT_INT: "012345678912" # nosem - no sec issue
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
