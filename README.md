@@ -51,7 +51,7 @@ Use `npm run cdk bootstrap -- --region ${AWS_REGION} --profile ${AWS_PROFILE}` c
 
 ### Please make sure the IAM role for CDK deployment starting with " cdk-cfn-xxxxxx-exec-role-" is an administrator Data Lake administrator in AWS Lakeformation
 
-![alt text](image.png)
+![alt text](<image-3.png>)
 
 ### Local configuration adjustments
 
@@ -186,9 +186,10 @@ This will take a while, please keep an eye on the cli outputs.
 `npm run cdk destroy -- --all --region ${AWS_REGION} --profile ${AWS_PROFILE}`
 
 4. After that please manually delete Amazon Datazone created Glue databases in AWS Glue. Please follow this link in case you need to [troubleshoot Lake Formation permission errors in AWS Glue](https://repost.aws/knowledge-center/glue-insufficient-lakeformation-permissions)
-![alt text](image-1.png)
+![alt text](<image-4.png>)
+
 5. Also remove the below IAM roles from AWS Lake Formation’s Administrative roles and tasks
-![alt text](image-2.png)
+![alt text](<image-5.png>)
 
 ## Playbooks
 
