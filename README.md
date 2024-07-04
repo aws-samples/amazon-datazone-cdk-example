@@ -187,6 +187,7 @@ This will take a while, please keep an eye on the cli outputs.
 
 4. After that please manually delete Amazon Datazone created Glue databases in AWS Glue. Please follow this link in case you need to [troubleshoot Lake Formation permission errors in AWS Glue](https://repost.aws/knowledge-center/glue-insufficient-lakeformation-permissions)
 ![alt text](<image-4.png>)
+
 5. Also remove the below IAM roles from AWS Lake Formation’s Administrative roles and tasks
 ![alt text](<image-5.png>)
 
