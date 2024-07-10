@@ -29,7 +29,7 @@ figured out for the same.
 You need to have the following dependencies in place:
 
 * An [AWS account](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fportal.aws.amazon.com%2Fbilling%2Fsignup%2Fresume&client_id=signup) (with Amazon IAM Identity Center enabled)
-* Bash/ZSH/WSL2 terminal
+* Bash/ZSH/[WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 * AWS credentials and profiles for each environment under ~/.aws/config [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
   * You must export `AWS_PROFILE` and `AWS_REGION` containing the AWS Account credentials where you will deploy Amazon DataZone to. This is necessary to be present before performing any infrastructure deployment via AWS CDK below.
