@@ -29,7 +29,12 @@ for file in "${files[@]}"; do
     fi
     
     # Perform the string replacements using sed
-    sed -i "" "s/AWS_ACCOUNT_ID_PLACEHOLDER/$aws_account_id/g; s/AWS_REGION_PLACEHOLDER/$aws_region/g" "$file"
-
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        sed -i "" "s/AWS_ACCOUNT_ID_PLACEHOLDER/$aws_account_id/g; s/AWS_REGION_PLACEHOLDER/$aws_region/g" "$file"
+    else
+        # Linux and other Unix-like systems
+        sed -i "s/AWS_ACCOUNT_ID_PLACEHOLDER/$aws_account_id/g; s/AWS_REGION_PLACEHOLDER/$aws_region/g" "$file"
+    fi
     echo "Replacements performed in '$file'."
 done
