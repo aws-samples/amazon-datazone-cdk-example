@@ -49,7 +49,7 @@ npm ci ### it installs the frozen dependencies from package-lock.json
 
 Use `npm run cdk bootstrap -- --region ${AWS_REGION} --profile ${AWS_PROFILE}` command to do initial bootstraping of the AWS Account
 
-### Please make sure the IAM role for AWS CDK deployment starting with " cdk-cfn-xxxxxx-exec-role-" is an administrator Data Lake administrator in AWS Lakeformation
+### Please make sure the IAM role for AWS CDK deployment starting with "cdk-cfn-xxxxxx-exec-role-" is an administrator Data Lake administrator in AWS Lakeformation
 
 ![alt text](<image-3.png>)
 
