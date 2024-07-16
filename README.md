@@ -49,7 +49,7 @@ npm ci ### it installs the frozen dependencies from package-lock.json
 
 Use `npm run cdk bootstrap -- --region ${AWS_REGION} --profile ${AWS_PROFILE}` command to do initial bootstraping of the AWS Account
 
-### Please make sure the IAM role for CDK deployment starting with " cdk-cfn-xxxxxx-exec-role-" is an administrator Data Lake administrator in AWS Lakeformation
+### Please make sure the IAM role for AWS CDK deployment starting with " cdk-cfn-xxxxxx-exec-role-" is an administrator Data Lake administrator in AWS Lakeformation
 
 ![alt text](<image-3.png>)
 
@@ -59,7 +59,7 @@ Now that you have installed all the required dependencies locally and done the i
 
 #### 0. Preparation
 
-Run the `scripts/prepare.sh` and provide the AWS_ACCOUNT_ID and the AWS_REGION (same as the one used for the AWS CDK commands above) which will then be replaced in the following files:
+Run the `scripts/prepare.sh` and provide your AWS_ACCOUNT_ID and the AWS_REGION (same as the one used for the AWS CDK commands above). The preceding command will replace the AWS_ACCOUNT_ID_PLACEHOLDER and AWS_REGION_PLACEHOLDER values in the following config files:
 
 * `lib/config/project_config.json`
 * `lib/config/project_environment_config.json`
@@ -70,7 +70,7 @@ This step is mandatory for single account deployment.
 
 Make sure to check the `CUSTOM_RESOURCE_LAMBDA_ROLE_ARN` (under [constants.ts](lib%2Fconstants.ts)) to the role that you would use for deploying the CDK. This is a **necessary step** for creating the custom resource. By default, CDK uses the role  created during bootstrapping and can be found in the CFN Stack with name `CDKToolkit` with Logical ID being `CloudFormationExecutionRole` .
 
-Update the CDK Role's trust relationship in the AWS Account where you will be deploying the solution and add the following permissions to it:
+On the IAM console, update the trust policy of the IAM role for your AWS CDK deployment that starts with cdk-hnb659fds-cfn-exec-role- by adding the following permissions. Replace ${ACCOUNT_ID} and ${REGION} with your specific AWS account and Region.
 
 ```agsl
     {
@@ -101,7 +101,7 @@ The following custom configurations are currently supported:
 
 1. **Domain**
 
-   1. Name can be updated by updating the `DOMAIN_NAME` (under [constants.ts](lib%2Fconstants.ts)).
+   1. Update DOMAIN_NAME as needed (under [constants.ts](lib%2Fconstants.ts)).
    2. SSO Configuration for domain can be enabled by updating the `SHOULD_ENABLE_SSO_FOR_DOMAIN` (under [constants.ts](lib%2Fconstants.ts)).
 
 **NOTE** - If you want to use a different `DOMAIN_EXECUTION_ROLE_NAME` or `KMS Key Name`  for setting up domain then the same can be updated in [constants.ts](lib%2Fconstants.ts)).
@@ -110,11 +110,10 @@ The following custom configurations are currently supported:
     Please update  [project_enviornment_config.json] as follows-->
     1. You can create an Environment Profile for either DataLake or DataWarehouse blueprints which can be configured by the EnvironmentBlueprintIdentifier. In addition to this, you can add a Description, AWS Account and Region to which the environment should be deployed.
     2. You can add multiple environments for a single environment profile by updating the Environments field. Each environment can have a name, description, and multiple data sources.
-    2. Data source name needs to be updated by updating `DATA_SOURCE_NAME_PLACEHOLDER` and the description by updating `DATA_SOURCE_DESCRIPTION_PLACEHOLDER`. Please refer to [AWS::DataZone::DataSource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html) for the various fields that you can configure for a data source. This would create a data source for the environment. Refer [DataZone DataSource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html) for the various fields that can be configured for a data source.
-    3. Please update `EXISTING_GLUE_DB_NAME_PLACEHOLDER` with the existing AWS Glue database name. Please make sure you have at least 1 existing Glue table to publish as a data source within the Amazon Datazone. The schedule in the following code is an example to schedule the data source job run in Amazon DataZone; you can change it according to your requirements.
-
-You can create an Environment Profile for either DataLake or DataWarehouse blueprints which can be configured by the EnvironmentBlueprintIdentifier. In addition to this, you can add a Description, AWS Account and Region to which the environment should be deployed.
-   2. You can add Multiple Environments for a single Environment Profile by updating the `Environments` field. Each environment can have a Name, Description, and multiple Data Sources.
+    3. Data source name needs to be updated by updating `DATA_SOURCE_NAME_PLACEHOLDER` and the description by updating `DATA_SOURCE_DESCRIPTION_PLACEHOLDER`. Please refer to [AWS::DataZone::DataSource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html) for the various fields that you can configure for a data source. This would create a data source for the environment. Refer [DataZone DataSource](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html) for the various fields that can be configured for a data source.
+    4. Please update `EXISTING_GLUE_DB_NAME_PLACEHOLDER` with the existing AWS Glue database name in the same AWS account where you are deploying the Amazon DataZone core components with the AWS CDK. Please make sure you have at least 1 existing Glue table to publish as a data source within the Amazon Datazone. The schedule in the following code is an example to schedule the data source job run in Amazon DataZone; you can change it according to your requirements.
+   5.You can create an Environment Profile for either DataLake or DataWarehouse blueprints which can be configured by the EnvironmentBlueprintIdentifier. In addition to this, you can add a Description, AWS Account and Region to which the environment should be deployed.
+   6. You can add Multiple Environments for a single Environment Profile by updating the `Environments` field. Each environment can have a Name, Description, and multiple Data Sources.
 
 3. **Project and Project Owners**
    1. You can use [project_config.json](lib%2Fconfig%2Fproject_config.json) for creating new projects. Currently, Project Name, Description and Owner can be configured.
@@ -127,11 +126,12 @@ You can create an Environment Profile for either DataLake or DataWarehouse bluep
 3. The Project Members custom resource can also be expanded to add more members to the Project.
 
 4. **Glossaries and Glossary Terms**
-
+An example business glossary and glossary terms are provided for the projects
    1. You can add glossaries and glossary terms to project using [project_glossary_config.json](lib%2Fconfig%2Fproject_glossary_config.json).
    2. You need to specify the Project Name under which the Glossary should be created.
    3. Each Glossary can have a Name, Description and Glossary Terms.
    4. A Glossary Terms can have a Name, ShortDescription, LongDescription.
+      
 
 **NOTE** -
 Adding **TermRelations** is **Not Supported** currently
@@ -173,28 +173,32 @@ Now that you have all the configurations in place, from the local environment to
 
 `npm run cdk deploy -- --all --region ${AWS_REGION} --profile ${AWS_PROFILE}`
 
-This will take a while, please keep an eye on the cli outputs.
+This will take a while, please keep an eye on the cli outputs. During deployment, enter y if you want to deploy the changes for some stacks when you see the prompt ```Do you wish to deploy these changes (y/n)?```.
 
 ## Cleanup
 
 **Note**: In case you have data already shared via Amazon DataZone or any user association and you want to destroy the entire infrastructure during cleanup phase above then you have to remove those manually first in the AWS Console as AWS CDK won't be able to automatically do that for you.
 
-1. Please [unpublished the data within Amazon Datazone](https://docs.aws.amazon.com/datazone/latest/userguide/archive-data-asset.html) Data portal manually
-2. [Delete the data asset manually from the Amazon Datazone Data portal](https://docs.aws.amazon.com/datazone/latest/userguide/delete-data-asset.html)
-3. To destroy all the resources created you can run the command below.
+To avoid incurring future charges, delete the resources. If you have already shared the data source using Amazon DataZone, then you have to remove those manually first in the Amazon DataZone data portal because the AWS CDK isn’t able to automatically do that.
+
+1. Please [unpublished the data within Amazon Datazone](https://docs.aws.amazon.com/datazone/latest/userguide/archive-data-asset.html) data portal manually
+2. [Delete the data asset manually from the Amazon Datazone data portal](https://docs.aws.amazon.com/datazone/latest/userguide/delete-data-asset.html)
+3. From the root of your repository folder, run the following command:
 
 `npm run cdk destroy -- --all --region ${AWS_REGION} --profile ${AWS_PROFILE}`
 
-4. After that please manually delete Amazon Datazone created Glue databases in AWS Glue. Please follow this link in case you need to [troubleshoot Lake Formation permission errors in AWS Glue](https://repost.aws/knowledge-center/glue-insufficient-lakeformation-permissions)
+4. Delete the Amazon DataZone created databases in AWS Glue. If needed, refer to the tips to [troubleshoot Lake Formation permission errors in AWS Glue](https://repost.aws/knowledge-center/glue-insufficient-lakeformation-permissions)
 ![alt text](<image-4.png>)
 
-5. Also remove the below IAM roles from AWS Lake Formation’s Administrative roles and tasks
+5. Remove the created IAM roles from Lake Formation administrative roles and tasks.
 ![alt text](<image-5.png>)
 
 ## Playbooks
 
 ### Troubleshooting common deployment problems
 
-* In case you get: ```"Domain name already exists under this account, please use another one (Service: DataZone, Status Code: 409, Request ID: 2d054cb0-0 fb7-466f-ae04-c53ff3c57c9a)" (RequestToken: 85ab4aa7-9e22-c7e6-8f00-80b5871e4bf7, HandlerErrorCode: AlreadyExists)``` then please change the domain name (DOMAIN_NAME) under `lib/constants.ts` and try to re-deploy again.
-* In case you get: ```"Resource of type 'AWS::IAM::Role' with identifier 'CustomResourceProviderRole1' already exists." (RequestToken: 17a6384e-7b0f-03b3
--1161-198fb044464d, HandlerErrorCode: AlreadyExists)``` then this means you are accidentally trying to deploy everything in the same account but different region, please stick to the region you configured initially in your initial deploy. For the sake of simplicity the `DataZonePreReqStack` can only be deployed in one region in the same AWS account.
+* If you get the message: ```"Domain name already exists under this account, please use another one (Service: DataZone, Status Code: 409, Request ID: 2d054cb0-0 fb7-466f-ae04-c53ff3c57c9a)" (RequestToken: 85ab4aa7-9e22-c7e6-8f00-80b5871e4bf7, HandlerErrorCode: AlreadyExists)```, change the domain name under `lib/constants.ts` and try to deploy again.
+
+* If you get the message ```"Resource of type 'AWS::IAM::Role' with identifier 'CustomResourceProviderRole1' already exists." (RequestToken: 17a6384e-7b0f-03b3 -1161-198fb044464d, HandlerErrorCode: AlreadyExists)```, this means you’re accidentally trying to deploy everything in the same account but a different Region. Make sure to use the Region you configured in your initial deployment. For the sake of simplicity, the `DataZonePreReqStack` is in one Region in the same account.
+ 
+* If you get the message ```"Unmanaged asset” Warning in the data asset on you datazone project```, you must explicitly provide Amazon DataZone with Lake Formation permissions to access tables in this external AWS Glue database. For instructions, refer to Configure Lake Formation permissions for Amazon DataZone.
