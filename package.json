@@ -11,7 +11,7 @@
         "test": "jest",
         "lint": "npx eslint . --ext .ts --max-warnings 10",
         "lint:fix": "npx eslint . --ext .ts --fix",
-        "cdk": "npx aws-cdk@2.144.0",
+        "cdk": "npx aws-cdk@2.159.0",
         "license": "npx ts-node ./scripts/check-licenses.ts",
         "audit:license": "npm run license",
         "audit:license:fix": "npm run license -- --fix"
@@ -37,7 +37,7 @@
     "dependencies": {
         "@types/uuid": "9.0.8",
         "@typescript-eslint/visitor-keys": "7.1.1",
-        "aws-cdk-lib": "2.144.0",
+        "aws-cdk-lib": "2.159.0",
         "constructs": "^10.3.0",
         "source-map-support": "^0.5.21"
     }
