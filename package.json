@@ -37,7 +37,7 @@
     "dependencies": {
         "@types/uuid": "9.0.8",
         "@typescript-eslint/visitor-keys": "7.1.1",
-        "aws-cdk-lib": "2.159.0",
+        "aws-cdk-lib": "2.186.0",
         "constructs": "^10.3.0",
         "source-map-support": "^0.5.21"
     }
